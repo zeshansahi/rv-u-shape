@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="mohit.android.assignment.kotlin.fragments.CountriesFragment"
+        android:name="my.android.kotlin.fragments.RvFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_countries">
        <!-- <action

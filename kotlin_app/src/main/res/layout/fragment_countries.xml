@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d5d5d5d5"
-    tools:context=".fragments.CountriesFragment">
+    tools:context="my.android.kotlin.fragments.RvFragment">
     <!--below car is use for custom tool bar-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cvToolBar"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
-                android:text="@string/countries"
+                android:text="Items"
                 android:textAlignment="center"
                 android:textColor="@color/color_black"
                 android:textStyle="bold" />
