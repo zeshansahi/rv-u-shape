@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="mohit.android.assignment.kotlin.fragments.CountriesFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_countries">
+       <!-- <action
+            android:id="@+id/action_splashFragment_to_welcomfragment"
+            app:destination="@id/WellcomeFragment"
+            app:popUpTo="@+id/auth_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_Homescreen"
+            app:destination="@id/HomeScreenFragment"
+            app:popUpTo="@+id/auth_navigation"
+            app:popUpToInclusive="true" />
+            <argument
+            android:name="value"
+            app:argType="com.liquetag.tableconnect.model.PassData" />
+            -->
+
+    </fragment>
+
+</navigation>

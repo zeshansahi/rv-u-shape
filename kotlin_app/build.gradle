@@ -1,0 +1,132 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "29.0.3"
+
+
+    defaultConfig {
+
+        flavorDimensions "default"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+   kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src/main/res', 'src/main/res/2'
+            }
+        }
+    }
+
+    productFlavors {
+        production {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            applicationId "mohit.android.assignment.kotlin"
+            minSdkVersion 23
+            targetSdkVersion 32
+            versionCode 1
+            versionName = "production-" + versionCode
+
+            buildConfigField "String", "baseUrl", "\"https://gist.githubusercontent.com/peymano-wmt/32dcb892b06648910ddd40406e37fdab/raw/db25946fd77c5873b0303b858e861ce724e0dcd0/\""
+
+        }
+
+        staging {
+
+            applicationId "mohit.android.assignment.kotlin"
+            minSdkVersion 23
+            targetSdkVersion 32
+            versionCode 1
+            versionName = "production-" + versionCode
+            buildConfigField "String", "baseUrl", "\"https://gist.githubusercontent.com/peymano-wmt/32dcb892b06648910ddd40406e37fdab/raw/db25946fd77c5873b0303b858e861ce724e0dcd0/\""
+
+        }
+    }
+
+}
+dependencies {
+    testImplementation project(path: ':kotlin_app')
+    def nav_version = "2.3.0"
+    def kotlin_version = '1.4.31'
+    def hilt_version = '2.28.1-alpha'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Kotlin and Kotlin Coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
+    implementation 'androidx.activity:activity-ktx:1.2.3'
+
+    // Unit Testing
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    testImplementation 'junit:junit:4.13.2'
+
+
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    //MockWebserver
+    testImplementation('com.squareup.okhttp3:mockwebserver:4.9.1')
+    // Needed for unit testing API
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    testImplementation "org.mockito:mockito-core:3.11.2"
+    testImplementation "org.mockito:mockito-android:3.11.2"
+    testImplementation "org.robolectric:robolectric:4.5.1"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1'
+//image display library
+    implementation 'com.facebook.fresco:fresco:2.6.0'
+
+}
+
