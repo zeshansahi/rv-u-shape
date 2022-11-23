@@ -1,4 +1,4 @@
-# android-code-assignment
+# u-shape rv
 I have used
 #### kotlin to complete the assignment
 
@@ -8,21 +8,6 @@ I have used
 
 You must have newest Android Studio to run this Project
 
-
-### Two productFlavors
-- production
-- staging
-- currently both flavours has same configurations.
-
-
-
-- Navigation component used for  Navigation.
-
-- I have created One Fragment for showing Countries list.
-
-- i have written test cases for one API
-### Api
-- Countries list api used to show the list
-### Orientation
-- Orientation handled using view-model, api only call once and we need not to call api on orientation change.
-- i created one View for both Orientations because the UI is look like same on both Orientations
+### My gif
+![](https://github.com/zeshansahi/rv-u-shape/blob/main/kotlin_app/WhatsApp%20Video%202022-11-23%20at%208.31.11%20AM.mp4)
+ 
